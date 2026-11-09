@@ -1,0 +1,144 @@
+/* CSS RESET & BASICS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+  line-height: 1.6;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* HEADER / BIO */
+header {
+  margin-bottom: 60px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+p.subtitle {
+  color: #666666;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* GALLERY - CLEAN MASONRY LAYOUT */
+.gallery {
+  column-count: 3;
+  column-gap: 30px;
+  margin-bottom: 80px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  background-color: #f9f9f9;
+  break-inside: avoid;
+  margin-bottom: 30px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+  cursor: zoom-in;
+}
+
+.gallery-item img:hover {
+  opacity: 0.85;
+}
+
+/* RESPONSIVE LAYOUT FOR SMALLER SCREENS */
+@media (max-width: 900px) {
+  .gallery {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery {
+    column-count: 1;
+  }
+}
+
+/* FOOTER / CONTACT & SOCIALS */
+footer {
+  border-top: 1px solid #eeeeee;
+  padding-top: 40px;
+  text-align: center;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 15px;
+}
+
+.social-links a {
+  color: #111111;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: #888888;
+}
+
+/* LIGHTBOX OVERLAY */
+.lightbox {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.95); /* Minimalist semi-transparent white */
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex; /* Shown when activated by JS */
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 25px;
+  right: 35px;
+  font-size: 2rem;
+  color: #111111;
+  cursor: pointer;
+  font-weight: 300;
+}
